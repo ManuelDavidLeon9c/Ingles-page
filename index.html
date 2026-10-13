@@ -23,18 +23,18 @@
   <!-- Barra superior -->
   <header class="top">
     <div class="wrap top-in">
-      <a class="brand" href="#inicio">
+      <a class="brand" href="index.html">
         <span class="brand-badge">12</span>
         <span class="brand-name">Tense<em>Lab</em></span>
       </a>
       <nav class="main-nav" id="mainNav">
-        <a href="#inicio">Inicio</a>
-        <a href="#mapa">El mapa</a>
-        <a href="#tiempos">Los 12 tiempos</a>
-        <a href="#maquina">Conjugador</a>
-        <a href="#quiz">Quiz</a>
-        <a href="#errores">Errores típicos</a>
-        <a href="#irregulares">Irregulares</a>
+        <a href="index.html" class="active">Inicio</a>
+        <a href="mapa.html">El mapa</a>
+        <a href="tiempos.html">Los 12 tiempos</a>
+        <a href="conjugador.html">Conjugador</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="errores.html">Errores típicos</a>
+        <a href="irregulares.html">Irregulares</a>
       </nav>
     </div>
   </header>
@@ -49,8 +49,8 @@
           <p class="hero-sub">Del <b>Past Perfect</b> al <b>Future Continuous</b>: entiende la idea detrás de cada tiempo,
             mira su fórmula, escucha su ritmo con el conjugador y ponlo a prueba con el quiz.</p>
           <div class="hero-ctas">
-            <a class="btn btn-primary" href="#mapa">Explorar el mapa ↓</a>
-            <a class="btn btn-ghost" href="#quiz">Ir directo al quiz</a>
+            <a class="btn btn-primary" href="mapa.html">Explorar el mapa ↓</a>
+            <a class="btn btn-ghost" href="quiz.html">Ir directo al quiz</a>
           </div>
           <div class="hero-chips">
             <span class="hchip past">4 tiempos de pasado</span>
@@ -85,82 +85,9 @@
       </div>
     </section>
 
-    <!-- ================= MAPA ================= -->
-    <section id="mapa">
-      <div class="wrap">
-        <div class="sec-head rv"><span class="sec-num">01</span><h2 class="df">El mapa de los tiempos</h2></div>
-        <p class="sec-sub rv">Dos ejes lo explican todo: el <b>tiempo</b> (filas de color) y el <b>aspecto</b> (columnas). Cada casilla enlaza con la ficha del tiempo correspondiente.</p>
-        <div class="map-scroll rv"><div class="map" id="mapGrid"></div></div>
-      </div>
-    </section>
-    <!-- ================= FICHAS ================= -->
-    <section id="tiempos">
-      <div class="wrap">
-        <div class="sec-head rv"><span class="sec-num">02</span><h2 class="df">Los doce, uno por uno</h2></div>
-        <p class="sec-sub rv">Cada ficha: fórmula (+, −, ?), usos, ejemplos traducidos y palabras pista. El color indica la zona del tiempo.</p>
-        <div class="cards" id="cardsGrid"></div>
-      </div>
-    </section>
-    <!-- ================= CONJUGADOR ================= -->
-    <section id="maquina">
-      <div class="wrap">
-        <div class="sec-head rv"><span class="sec-num">03</span><h2 class="df">La máquina de conjugar</h2></div>
-        <p class="sec-sub rv">Escribe cualquier verbo en infinitivo (o toca uno de los sugeridos), elige un tiempo y mira todas las personas, con su negativa y su pregunta.</p>
-        <div class="machine rv">
-          <div>
-            <label class="m-label" for="verbInput">VERBO EN INFINITIVO</label>
-            <div class="verb-row">
-              <input id="verbInput" list="verbList" value="study" autocomplete="off" spellcheck="false" placeholder="p. ej. work">
-              <button class="btn btn-primary" id="goBtn" style="padding:12px 18px">→</button>
-            </div>
-            <datalist id="verbList"></datalist>
-            <div class="quick" id="quickVerbs"></div>
-            <label class="m-label">TIEMPO VERBAL</label>
-            <div class="tpills" id="tensePills"></div>
-          </div>
-          <div class="m-result" id="conjResult"></div>
-        </div>
-      </div>
-    </section>
-    <!-- ================= QUIZ ================= -->
-    <section id="quiz">
-      <div class="wrap">
-        <div class="sec-head rv"><span class="sec-num">04</span><h2 class="df">Ponte a prueba</h2></div>
-        <p class="sec-sub rv">8 preguntas aleatorias. Al responder, verás la explicación con el tiempo verbal exacto. Teclas 1–4 también funcionan.</p>
-        <div class="quiz-card rv" id="quizCard"></div>
-      </div>
-    </section>
-    <!-- ================= ERRORES ================= -->
-    <section id="errores">
-      <div class="wrap">
-        <div class="sec-head rv"><span class="sec-num">05</span><h2 class="df">Errores típicos de hispanohablantes</h2></div>
-        <p class="sec-sub rv">El español nos traiciona. Toca cada tarjeta para descubrir la forma correcta y el porqué.</p>
-        <div class="flips" id="flipsGrid"></div>
-      </div>
-    </section>
-    <!-- ================= VERBOS: IRREGULARES Y REGULARES ================= -->
-    <section id="irregulares">
-      <div class="wrap">
-        <div class="sec-head rv"><span class="sec-num">06</span><h2 class="df">Irregulares y regulares</h2></div>
-        <p class="sec-sub rv">Los irregulares no tienen regla: memoria y práctica. De los regulares se encarga la tabla, aplicando las normas del -ed por ti. Filtra por tipo o busca cualquier verbo.</p>
-        <div class="irr-tools rv">
-          <div class="type-toggles" id="typeToggles">
-            <button class="type-btn sel" data-type="all">Todos</button>
-            <button class="type-btn" data-type="irr">Irregulares</button>
-            <button class="type-btn" data-type="reg">Regulares</button>
-          </div>
-          <input id="irrFilter" placeholder="🔍 buscar verbo o significado…" autocomplete="off">
-          <span class="irr-count" id="irrCount"></span>
-        </div>
-        <div class="irr-wrap rv">
-          <table class="irr">
-            <thead><tr><th>INFINITIVO</th><th>PASADO</th><th>PARTICIPIO</th><th>SIGNIFICADO</th><th>TIPO</th></tr></thead>
-            <tbody id="irrBody"></tbody>
-          </table>
-        </div>
-        <p class="irr-legend rv">💡 En los regulares, la tabla aplica las reglas automáticamente: stop → stopped · study → studied · dance → danced · prefer → preferred.</p>
-      </div>
-    </section>
+    <!-- ================= SECCIONES MOVIDAS A PÁGINAS INDEPENDIENTES ================= -->
+    <!-- Mapa -> mapa.html · Fichas -> tiempos.html · Conjugador -> conjugador.html
+         Quiz -> quiz.html · Errores -> errores.html · Irregulares -> irregulares.html -->
   </main>
 
   <!-- ================= FOOTER ================= -->
@@ -183,13 +110,6 @@
 
   <script src="js/data.js"></script>
   <script src="js/hero.js"></script>
-  <script src="js/mapa.js"></script>
-  <script src="js/fichas.js"></script>
-  <script src="js/conjugador.js"></script>
-  <script src="js/quiz.js"></script>
-  <script src="js/errores.js"></script>
-  <script src="js/verbos.js"></script>
   <script src="js/reveal.js"></script>
-  <script src="js/scrollspy.js"></script>
 </body>
 </html>
