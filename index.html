@@ -28,6 +28,7 @@
         <span class="brand-name">Tense<em>Lab</em></span>
       </a>
       <nav class="main-nav" id="mainNav">
+        <a href="#inicio">Inicio</a>
         <a href="#mapa">El mapa</a>
         <a href="#tiempos">Los 12 tiempos</a>
         <a href="#maquina">Conjugador</a>
@@ -88,11 +89,10 @@
     <section id="mapa">
       <div class="wrap">
         <div class="sec-head rv"><span class="sec-num">01</span><h2 class="df">El mapa de los tiempos</h2></div>
-        <p class="sec-sub rv">Dos ejes lo explican todo: el <b>tiempo</b> (filas de color) y el <b>aspecto</b> (columnas). Haz clic en cualquier casilla para saltar a su ficha.</p>
+        <p class="sec-sub rv">Dos ejes lo explican todo: el <b>tiempo</b> (filas de color) y el <b>aspecto</b> (columnas). Cada casilla enlaza con la ficha del tiempo correspondiente.</p>
         <div class="map-scroll rv"><div class="map" id="mapGrid"></div></div>
       </div>
     </section>
-
     <!-- ================= FICHAS ================= -->
     <section id="tiempos">
       <div class="wrap">
@@ -101,7 +101,6 @@
         <div class="cards" id="cardsGrid"></div>
       </div>
     </section>
-
     <!-- ================= CONJUGADOR ================= -->
     <section id="maquina">
       <div class="wrap">
@@ -123,7 +122,6 @@
         </div>
       </div>
     </section>
-
     <!-- ================= QUIZ ================= -->
     <section id="quiz">
       <div class="wrap">
@@ -132,7 +130,6 @@
         <div class="quiz-card rv" id="quizCard"></div>
       </div>
     </section>
-
     <!-- ================= ERRORES ================= -->
     <section id="errores">
       <div class="wrap">
@@ -141,7 +138,6 @@
         <div class="flips" id="flipsGrid"></div>
       </div>
     </section>
-
     <!-- ================= VERBOS: IRREGULARES Y REGULARES ================= -->
     <section id="irregulares">
       <div class="wrap">
@@ -165,6 +161,8 @@
         <p class="irr-legend rv">💡 En los regulares, la tabla aplica las reglas automáticamente: stop → stopped · study → studied · dance → danced · prefer → preferred.</p>
       </div>
     </section>
+  </main>
+
   <!-- ================= FOOTER ================= -->
   <footer>
     <div class="wrap">
@@ -183,6 +181,15 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/mapa.js"></script>
+  <script src="js/fichas.js"></script>
+  <script src="js/conjugador.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/errores.js"></script>
+  <script src="js/verbos.js"></script>
+  <script src="js/reveal.js"></script>
+  <script src="js/scrollspy.js"></script>
 </body>
 </html>
