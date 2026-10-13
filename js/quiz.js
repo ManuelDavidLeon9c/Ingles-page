@@ -54,7 +54,7 @@ function quizEnd(){
     <div class="big">${qScore}<span style="font-size:34px;color:rgba(27,42,36,.4)"> / ${n}</span></div>
     <div class="msg">${msg}</div>
     <button class="btn btn-primary" id="qAgain">Repetir con otras preguntas</button>
-    <a class="btn btn-ghost" href="#tiempos" style="margin-left:10px">Repasar las fichas</a></div>`;
+    <a class="btn btn-ghost" href="tiempos.html" style="margin-left:10px">Repasar las fichas</a></div>`;
   document.getElementById('qAgain').addEventListener('click',quizStart);
 }
 quizIntro();
