@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TenseLab · Los 12 tiempos verbales del inglés</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕰️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,900;1,9..144,600;1,9..144,900&family=Karla:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fondo por capas -->
+  <div class="bg-glow"></div>
+  <div class="bg-grid"></div>
+  <div class="ghost" style="top:9%;left:-3%;font-size:100px">have been</div>
+  <div class="ghost" style="top:38%;right:-4%;font-size:130px;animation-delay:-6s">will</div>
+  <div class="ghost" style="bottom:20%;left:6%;font-size:90px;animation-delay:-3s">-ing</div>
+  <div class="ghost" style="bottom:4%;right:12%;font-size:105px;animation-delay:-9s">went / gone</div>
+
+  <!-- Barra superior -->
+  <header class="top">
+    <div class="wrap top-in">
+      <a class="brand" href="#inicio">
+        <span class="brand-badge">12</span>
+        <span class="brand-name">Tense<em>Lab</em></span>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#mapa">El mapa</a>
+        <a href="#tiempos">Los 12 tiempos</a>
+        <a href="#maquina">Conjugador</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#errores">Errores típicos</a>
+        <a href="#irregulares">Irregulares</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">GUÍA INTERACTIVA · INGLÉS PARA HISPANOHABLANTES</p>
+          <h1>Los <span class="accent">12 tiempos</span> verbales del inglés, por fin con lógica.</h1>
+          <p class="hero-sub">Del <b>Past Perfect</b> al <b>Future Continuous</b>: entiende la idea detrás de cada tiempo,
+            mira su fórmula, escucha su ritmo con el conjugador y ponlo a prueba con el quiz.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#mapa">Explorar el mapa ↓</a>
+            <a class="btn btn-ghost" href="#quiz">Ir directo al quiz</a>
+          </div>
+          <div class="hero-chips">
+            <span class="hchip past">4 tiempos de pasado</span>
+            <span class="hchip present">4 de presente</span>
+            <span class="hchip future">4 de futuro</span>
+          </div>
+        </div>
+        <div class="cycler" id="cycler" title="Haz clic para avanzar">
+          <div class="cy-tag"><span>LA MISMA FRASE · 12 VERSIONES</span><span id="cyCount">01/12</span></div>
+          <div class="cy-tense" id="cyTense">Present Simple</div>
+          <div class="cy-sent df" id="cySent"></div>
+          <div class="tl3" id="cyTrack">
+            <div class="needle" id="cyNeedle"></div>
+            <span data-z="past">PASADO</span><span data-z="present">PRESENTE</span><span data-z="future">FUTURO</span>
+          </div>
+          <div class="cy-hint">↑ haz clic para viajar en el tiempo</div>
+        </div>
+      </div>
+      <div class="wrap steps rv">
+        <div class="step">
+          <b><span class="step-n">1</span>Entiende la lógica</b>
+          <p>Cada tiempo responde a dos preguntas: ¿cuándo? (pasado · presente · futuro) y ¿cómo se ve la acción? (simple · continuo · perfecto).</p>
+        </div>
+        <div class="step">
+          <b><span class="step-n">2</span>Estudia las 12 fichas</b>
+          <p>Fórmula, usos reales, ejemplos traducidos y las “palabras pista” que delatan cada tiempo en los exámenes.</p>
+        </div>
+        <div class="step">
+          <b><span class="step-n">3</span>Practica sin miedo</b>
+          <p>Conjuga cualquier verbo con la máquina y mide tu progreso con el quiz de 8 preguntas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MAPA ================= -->
+    <section id="mapa">
+      <div class="wrap">
+        <div class="sec-head rv"><span class="sec-num">01</span><h2 class="df">El mapa de los tiempos</h2></div>
+        <p class="sec-sub rv">Dos ejes lo explican todo: el <b>tiempo</b> (filas de color) y el <b>aspecto</b> (columnas). Haz clic en cualquier casilla para saltar a su ficha.</p>
+        <div class="map-scroll rv"><div class="map" id="mapGrid"></div></div>
+      </div>
+    </section>
+
+    <!-- ================= FICHAS ================= -->
+    <section id="tiempos">
+      <div class="wrap">
+        <div class="sec-head rv"><span class="sec-num">02</span><h2 class="df">Los doce, uno por uno</h2></div>
+        <p class="sec-sub rv">Cada ficha: fórmula (+, −, ?), usos, ejemplos traducidos y palabras pista. El color indica la zona del tiempo.</p>
+        <div class="cards" id="cardsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= CONJUGADOR ================= -->
+    <section id="maquina">
+      <div class="wrap">
+        <div class="sec-head rv"><span class="sec-num">03</span><h2 class="df">La máquina de conjugar</h2></div>
+        <p class="sec-sub rv">Escribe cualquier verbo en infinitivo (o toca uno de los sugeridos), elige un tiempo y mira todas las personas, con su negativa y su pregunta.</p>
+        <div class="machine rv">
+          <div>
+            <label class="m-label" for="verbInput">VERBO EN INFINITIVO</label>
+            <div class="verb-row">
+              <input id="verbInput" list="verbList" value="study" autocomplete="off" spellcheck="false" placeholder="p. ej. work">
+              <button class="btn btn-primary" id="goBtn" style="padding:12px 18px">→</button>
+            </div>
+            <datalist id="verbList"></datalist>
+            <div class="quick" id="quickVerbs"></div>
+            <label class="m-label">TIEMPO VERBAL</label>
+            <div class="tpills" id="tensePills"></div>
+          </div>
+          <div class="m-result" id="conjResult"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= QUIZ ================= -->
+    <section id="quiz">
+      <div class="wrap">
+        <div class="sec-head rv"><span class="sec-num">04</span><h2 class="df">Ponte a prueba</h2></div>
+        <p class="sec-sub rv">8 preguntas aleatorias. Al responder, verás la explicación con el tiempo verbal exacto. Teclas 1–4 también funcionan.</p>
+        <div class="quiz-card rv" id="quizCard"></div>
+      </div>
+    </section>
+
+    <!-- ================= ERRORES ================= -->
+    <section id="errores">
+      <div class="wrap">
+        <div class="sec-head rv"><span class="sec-num">05</span><h2 class="df">Errores típicos de hispanohablantes</h2></div>
+        <p class="sec-sub rv">El español nos traiciona. Toca cada tarjeta para descubrir la forma correcta y el porqué.</p>
+        <div class="flips" id="flipsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= VERBOS: IRREGULARES Y REGULARES ================= -->
+    <section id="irregulares">
+      <div class="wrap">
+        <div class="sec-head rv"><span class="sec-num">06</span><h2 class="df">Irregulares y regulares</h2></div>
+        <p class="sec-sub rv">Los irregulares no tienen regla: memoria y práctica. De los regulares se encarga la tabla, aplicando las normas del -ed por ti. Filtra por tipo o busca cualquier verbo.</p>
+        <div class="irr-tools rv">
+          <div class="type-toggles" id="typeToggles">
+            <button class="type-btn sel" data-type="all">Todos</button>
+            <button class="type-btn" data-type="irr">Irregulares</button>
+            <button class="type-btn" data-type="reg">Regulares</button>
+          </div>
+          <input id="irrFilter" placeholder="🔍 buscar verbo o significado…" autocomplete="off">
+          <span class="irr-count" id="irrCount"></span>
+        </div>
+        <div class="irr-wrap rv">
+          <table class="irr">
+            <thead><tr><th>INFINITIVO</th><th>PASADO</th><th>PARTICIPIO</th><th>SIGNIFICADO</th><th>TIPO</th></tr></thead>
+            <tbody id="irrBody"></tbody>
+          </table>
+        </div>
+        <p class="irr-legend rv">💡 En los regulares, la tabla aplica las reglas automáticamente: stop → stopped · study → studied · dance → danced · prefer → preferred.</p>
+      </div>
+    </section>
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="wrap">
+      <div class="tips rv">
+        <div class="tip"><span class="em">📅</span><h4>Un tiempo por semana</h4>
+          <p>No intentes los 12 de golpe. Domina uno, úsalo en frases propias toda la semana y pasa al siguiente.</p></div>
+        <div class="tip"><span class="em">🕵️</span><h4>Caza las pistas</h4>
+          <p><i>since, yesterday, by 2030, right now</i>… las palabras de tiempo delatan el verbo. Entrénate a verlas.</p></div>
+        <div class="tip"><span class="em">✍️</span><h4>Escribe tu día</h4>
+          <p>Cada noche: 3 frases de tu día en pasado, 1 plan en futuro y algo que llevas tiempo haciendo en presente perfecto.</p></div>
+      </div>
+      <div class="foot-line">
+        <span><b>TenseLab</b> · hecho a mano para estudiantes hispanohablantes</span>
+        <span>Practica un poco cada día — <i>little and often</i> 🕰️</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
