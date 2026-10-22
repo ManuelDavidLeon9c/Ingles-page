@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TenseLab · Quiz de tiempos verbales</title>
+  <title>TenseLab · Configurar Quiz de tiempos verbales</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕰️</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,12 +40,172 @@
   </header>
 
   <main>
-    <!-- ================= QUIZ ================= -->
+    <!-- ================= PRE-MENÚ CONFIGURADOR DEL QUIZ ================= -->
     <section id="quiz">
       <div class="wrap">
-        <div class="sec-head rv"><span class="sec-num">04</span><h2 class="df">Ponte a prueba</h2></div>
-        <p class="sec-sub rv">8 preguntas aleatorias. Al responder, verás la explicación con el tiempo verbal exacto. Teclas 1–4 también funcionan.</p>
-        <div class="quiz-card rv" id="quizCard"></div>
+        <div class="sec-head rv">
+          <span class="sec-num">04</span>
+          <h2 class="df">Configura tu Quiz</h2>
+        </div>
+        <p class="sec-sub rv">Elige qué tiempos verbales quieres practicar, activa los modos de juego (opción múltiple, acción en imagen, validar oraciones o validar el tiempo del verbo), decide si quieres contrarreloj y cuántas preguntas generar.</p>
+
+        <div class="qcfg-card rv" id="quizConfigurator">
+          <!-- PASO 1: TIEMPOS VERBALES -->
+          <div class="qcfg-block">
+            <div class="qcfg-head">
+              <div>
+                <h3 class="qcfg-title"><span class="qcfg-step">PASO 1</span> ¿Qué tiempos verbales quieres estudiar?</h3>
+                <p class="qcfg-sub">Selecciona todos los tiempos o filtra solo los que necesites repasar hoy.</p>
+              </div>
+              <span class="qcfg-count-badge" id="cfgTenseCount">12 de 12 seleccionados</span>
+            </div>
+
+            <div class="qcfg-presets" id="cfgTensePresets">
+              <button type="button" class="qcfg-preset active" data-preset="all">Todos los 12</button>
+              <button type="button" class="qcfg-preset" data-preset="past">Solo Pasado (4)</button>
+              <button type="button" class="qcfg-preset" data-preset="present">Solo Presente (4)</button>
+              <button type="button" class="qcfg-preset" data-preset="future">Solo Futuro (4)</button>
+              <button type="button" class="qcfg-preset" data-preset="simple">Simples (3)</button>
+              <button type="button" class="qcfg-preset" data-preset="continuous">Continuos (3)</button>
+              <button type="button" class="qcfg-preset" data-preset="perfect">Perfectos (6)</button>
+            </div>
+
+            <div class="qcfg-tenses-grid" id="cfgTensesGrid"></div>
+          </div>
+
+          <!-- PASO 2: MODOS DE JUEGO -->
+          <div class="qcfg-block">
+            <div class="qcfg-head">
+              <div>
+                <h3 class="qcfg-title"><span class="qcfg-step">PASO 2</span> Modos de juego y tipos de pregunta</h3>
+                <p class="qcfg-sub">Puedes elegir un único modo o activar varios a la vez para mezclarlos en tu quiz.</p>
+              </div>
+              <div style="display:flex;gap:8px;align-items:center">
+                <button type="button" class="qcfg-preset" id="cfgSelectAllModes">Activar los 4 modos</button>
+                <span class="qcfg-count-badge" id="cfgModeCount">4 modos activos</span>
+              </div>
+            </div>
+
+            <div class="qcfg-modes-grid" id="cfgModesGrid">
+              <button type="button" class="qcfg-mode-card sel" data-mode="choice">
+                <span class="qcfg-mode-ico">🎯</span>
+                <div class="qcfg-mode-body">
+                  <div class="qcfg-mode-top">
+                    <span class="qcfg-mode-name">Seleccionar la respuesta correcta</span>
+                    <span class="qcfg-check">✓</span>
+                  </div>
+                  <p class="qcfg-mode-desc">Completa la oración eligiendo la conjugación exacta entre 4 opciones posibles.</p>
+                </div>
+              </button>
+
+              <button type="button" class="qcfg-mode-card sel" data-mode="image">
+                <span class="qcfg-mode-ico">🖼️</span>
+                <div class="qcfg-mode-body">
+                  <div class="qcfg-mode-top">
+                    <span class="qcfg-mode-name">¿Qué está pasando en la imagen?</span>
+                    <span class="qcfg-check">✓</span>
+                  </div>
+                  <p class="qcfg-mode-desc">Mira la ilustración en pantalla con su contexto temporal y elige qué acción describe lo que ocurre.</p>
+                </div>
+              </button>
+
+              <button type="button" class="qcfg-mode-card sel" data-mode="sentence">
+                <span class="qcfg-mode-ico">⚖️</span>
+                <div class="qcfg-mode-body">
+                  <div class="qcfg-mode-top">
+                    <span class="qcfg-mode-name">¿La oración está bien o mal?</span>
+                    <span class="qcfg-check">✓</span>
+                  </div>
+                  <p class="qcfg-mode-desc">Analiza una oración completa en inglés y decide si es gramaticalmente correcta o si tiene un error.</p>
+                </div>
+              </button>
+
+              <button type="button" class="qcfg-mode-card sel" data-mode="verb">
+                <span class="qcfg-mode-ico">🔍</span>
+                <div class="qcfg-mode-body">
+                  <div class="qcfg-mode-top">
+                    <span class="qcfg-mode-name">¿El tiempo del verbo está bien?</span>
+                    <span class="qcfg-check">✓</span>
+                  </div>
+                  <p class="qcfg-mode-desc">Revisa un verbo resaltado junto a un tiempo verbal y responde si corresponde y está bien conjugado.</p>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- PASO 3 Y 4: CONTRARRELOJ Y CANTIDAD DE PREGUNTAS -->
+          <div class="qcfg-block">
+            <div class="qcfg-row-2col">
+              <!-- Contrarreloj -->
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <div>
+                  <h3 class="qcfg-title"><span class="qcfg-step">PASO 3</span> Modo Contrarreloj</h3>
+                  <p class="qcfg-sub">¿Quieres jugar con tiempo límite por cada pregunta?</p>
+                </div>
+                <div class="qcfg-pills" id="cfgTimerPills">
+                  <button type="button" class="qcfg-pill sel" data-timer="0">
+                    <b>Sin reloj</b>
+                    <span>A tu ritmo</span>
+                  </button>
+                  <button type="button" class="qcfg-pill" data-timer="20">
+                    <b>20 seg</b>
+                    <span>Moderado</span>
+                  </button>
+                  <button type="button" class="qcfg-pill" data-timer="12">
+                    <b>12 seg</b>
+                    <span>Ágil</span>
+                  </button>
+                  <button type="button" class="qcfg-pill" data-timer="7">
+                    <b>7 seg</b>
+                    <span>Relámpago</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Cantidad de preguntas -->
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <div>
+                  <h3 class="qcfg-title"><span class="qcfg-step">PASO 4</span> ¿Cuántas preguntas generar?</h3>
+                  <p class="qcfg-sub">Elige la duración de tu partida personalizada.</p>
+                </div>
+                <div class="qcfg-pills" id="cfgCountPills">
+                  <button type="button" class="qcfg-pill" data-count="5">
+                    <b>5</b>
+                    <span>Express</span>
+                  </button>
+                  <button type="button" class="qcfg-pill sel" data-count="8">
+                    <b>8</b>
+                    <span>Clásico</span>
+                  </button>
+                  <button type="button" class="qcfg-pill" data-count="12">
+                    <b>12</b>
+                    <span>Estándar</span>
+                  </button>
+                  <button type="button" class="qcfg-pill" data-count="16">
+                    <b>16</b>
+                    <span>Intensivo</span>
+                  </button>
+                  <button type="button" class="qcfg-pill" data-count="24">
+                    <b>24</b>
+                    <span>Maratón</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RESUMEN Y BOTÓN DE REDIRECCIÓN AL QUIZ -->
+          <div class="qcfg-footer">
+            <div class="qcfg-summary">
+              <span class="qcfg-summary-lbl">RESUMEN DE TU CONFIGURACIÓN</span>
+              <span class="qcfg-summary-txt" id="cfgSummaryText">12 tiempos · 4 modos · Sin reloj · 8 preguntas</span>
+              <span class="qcfg-warn" id="cfgWarning">Selecciona al menos 1 tiempo verbal y 1 modo de juego.</span>
+            </div>
+            <button type="button" class="btn btn-primary" id="cfgLaunchBtn">
+              Ir al Quiz configurado →
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   </main>

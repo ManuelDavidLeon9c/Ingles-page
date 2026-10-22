@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TenseLab · En partida · Quiz de tiempos verbales</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕰️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,900;1,9..144,600;1,9..144,900&family=Karla:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fondo por capas -->
+  <div class="bg-glow"></div>
+  <div class="bg-grid"></div>
+  <div class="ghost" style="top:9%;left:-3%;font-size:100px">have been</div>
+  <div class="ghost" style="top:38%;right:-4%;font-size:130px;animation-delay:-6s">will</div>
+  <div class="ghost" style="bottom:20%;left:6%;font-size:90px;animation-delay:-3s">-ing</div>
+  <div class="ghost" style="bottom:4%;right:12%;font-size:105px;animation-delay:-9s">went / gone</div>
+
+  <!-- Barra superior -->
+  <header class="top">
+    <div class="wrap top-in">
+      <a class="brand" href="index.html">
+        <span class="brand-badge">12</span>
+        <span class="brand-name">Tense<em>Lab</em></span>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html">Inicio</a>
+        <a href="mapa.html">El mapa</a>
+        <a href="tiempos.html">Los 12 tiempos</a>
+        <a href="conjugador.html">Conjugador</a>
+        <a href="quiz.html" class="active">Quiz</a>
+        <a href="errores.html">Errores típicos</a>
+        <a href="irregulares.html">Irregulares</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= PARTIDA DEL QUIZ ================= -->
+    <section id="quiz">
+      <div class="wrap">
+        <div class="qz-session-bar rv">
+          <a href="quiz.html" class="qz-back-link">← Volver al filtro del Quiz</a>
+          <div class="qz-session-meta" id="quizActiveConfigMeta"></div>
+        </div>
+
+        <div class="quiz-card rv" id="quizCard"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="wrap">
+      <div class="tips rv">
+        <div class="tip"><span class="em">📅</span><h4>Un tiempo por semana</h4>
+          <p>No intentes los 12 de golpe. Domina uno, úsalo en frases propias toda la semana y pasa al siguiente.</p></div>
+        <div class="tip"><span class="em">🕵️</span><h4>Caza las pistas</h4>
+          <p><i>since, yesterday, by 2030, right now</i>… las palabras de tiempo delatan el verbo. Entrénate a verlas.</p></div>
+        <div class="tip"><span class="em">✍️</span><h4>Escribe tu día</h4>
+          <p>Cada noche: 3 frases de tu día en pasado, 1 plan en futuro y algo que llevas tiempo haciendo en presente perfecto.</p></div>
+      </div>
+      <div class="foot-line">
+        <span><b>TenseLab</b> · hecho a mano para estudiantes hispanohablantes</span>
+        <span>Practica un poco cada día — <i>little and often</i> 🕰️</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/reveal.js"></script>
+</body>
+</html>
